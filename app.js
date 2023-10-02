@@ -1,28 +1,29 @@
-//Hello world
-console.log("hello world")
+const app = require("express")()
 
-console.log(1+2)
-const a = 10;
-var b = 20;
-b =40;
-// console.log(a)
-// console.log(b)
-const sum = a + b;
-// console.log(sum)
+//Alternative
+// const express = require("express")
+// const app = express()
 
-//array
-const numbers = [10,20,30]
-// console.log(numbers[1]);
 
-// to calculate length of array
+//req -request , res-response
 
-// console.log(numbers.length)
+app.get("/",(req,res)=>{
+    
+  
+    res.json({
+        message: "I am from home page"
+    })
+})
 
-// objects
-const person = {
- name: "a",
- age: 21
-}
-// {key:value}
-console.log("This is " + person.name)
-console.log(person.age)
+app.get("/contact",(req,res)=>{
+    res.send("<h1>I am from contact page<h1>")
+})
+
+app.get("/about",(req,res)=>{
+    res.send("I am from about page")
+})
+
+//2000 number ko room use gar yo project run garnalie
+app.listen(3000,(req,res)=>{
+    console.log("node js has started at port 3000")
+})
