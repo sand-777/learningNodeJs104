@@ -11,16 +11,23 @@ app.get("/",(req,res)=>{
     
   
     res.json({
-        message: "I am from home page"
+        message: "hello",
+        status: "studet"
+
     })
 })
 
 app.get("/contact",(req,res)=>{
-    res.send("<h1>I am from contact page<h1>")
+   res.json({
+    message:"you are in contact page"
+   })
 })
 
 app.get("/about",(req,res)=>{
-    res.send("I am from about page")
+    res.json({
+        message: "you are in about page",
+        
+    })
 })
 
 //2000 number ko room use gar yo project run garnalie
